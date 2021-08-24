@@ -3,9 +3,7 @@ import {
    STUDENT_SUCCESS,
    STUDENT_DELETE_REQUEST,
    STUDENT_DELETE_SUCCESS,
-   STUDENT_UPDATE_REQUEST,
    STUDENT_UPDATE_SUCCESS,
-   STUDENT_UPDATE_FAILURE
    } from "./studentAction";
 
 const initialState = {
