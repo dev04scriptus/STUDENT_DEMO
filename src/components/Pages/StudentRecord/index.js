@@ -22,7 +22,7 @@ export default function StudentRecord() {
             const data = StudentPersonalData
             dispatch(studentDataSet(data))
         }
-    }, [])
+    }, [dispatch])
     
     const modalToggle = () => setModal(!modal);
 
