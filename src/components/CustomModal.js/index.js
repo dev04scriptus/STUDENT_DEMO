@@ -2,6 +2,7 @@ import { Box, Button, Card, CardContent, makeStyles, Modal, TextareaAutosize, Te
 import React from 'react'
 import CloseIcon from '@material-ui/icons/Close';
 import { useForm } from "react-hook-form";
+import { toast } from 'react-toastify';
 
 const useStyles = makeStyles((theme) => ({
     CustomModal: {
@@ -74,6 +75,7 @@ export default function CustomModal({ isOpen, toggle, editStudentData, handleEdi
     const onSubmit = (data) => {
         const id = editStudentData.index
         if (data) {
+            toast.success(`Edit ${data.name} Record Successfully`)
             handleEditData(data, id)
             toggle()
         }

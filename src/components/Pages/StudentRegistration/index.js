@@ -2,6 +2,7 @@ import { Box, Button, Card, CardContent, makeStyles, TextareaAutosize, TextField
 import React from "react";
 import Layout from "../../layout";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,10 +36,12 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export default function StudentRegistration() {
+  toast.configure()
   const classes = useStyles();
   
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const onSubmit = (data) => {
+    toast.success(`${data.name} Stident Register Successfully`)
     const studentData = JSON.parse(localStorage.getItem("studentRecord"))
     if(data){
       if(studentData){
